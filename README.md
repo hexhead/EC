@@ -3,11 +3,12 @@ Evaporative Cooling (EC)
 
 #### A feature selection tool for GWAS and other biological data ####
 
-9/30/16
+**9/30/16**
 
-THIS PROJECT HAS BEEN DEPRECATED DUE TO RANDOM JUNGLE DEPRECATION.
-See the [inbix project](https://github.com/hexhead/inbix) for a new i
-implementation of EC using RandomJungle's replacement [Ranger](https://github.com/imbs-hl/ranger).
+**THIS PROJECT HAS BEEN DEPRECATED DUE TO RANDOM JUNGLE DEPRECATION!**
+See the [inbix project](https://github.com/hexhead/inbix) for a new 
+implementation of EC using RandomJungle's replacement 
+[Ranger](https://github.com/imbs-hl/ranger).
 
 ### Description ###
 EC is a free, open-source command-line tool for analysis of GWAS (SNP) and
