@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="88">
+<configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <df root="." name="cppec">
+    <df root="." name="0">
       <df name="examples">
         <in>example1.cpp</in>
         <in>example1_main.cpp</in>
@@ -39,6 +39,8 @@
           <in>EvaporativeCooling.h</in>
           <in>GSLRandomBase.h</in>
           <in>GSLRandomFlat.h</in>
+          <in>GeoData.cpp</in>
+          <in>GeoData.h</in>
           <in>Insilico.cpp</in>
           <in>Insilico.h</in>
           <in>PlinkBinaryDataset.cpp</in>
@@ -81,7 +83,6 @@
   <confs>
     <conf name="Default" type="0">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>false</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -100,6 +101,7 @@
               <pElem>/usr/local/include</pElem>
               <pElem>/usr/local/include/rjungle</pElem>
               <pElem>/usr/local/Cellar/libxml2/2.7.8/include/libxml2</pElem>
+              <pElem>/usr/local/include</pElem>
             </incDir>
             <preprocessorList>
               <Elem>HAVE__BOOL</Elem>
@@ -107,6 +109,10 @@
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
         <requiredProjects>
           <makeArtifact PL="../cpprelieff_fucku"
                         CT="0"
@@ -148,13 +154,6 @@
       </item>
       <item path="examples/example4_main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <folder path="cppec">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/local/include</pElem>
-          </incDir>
-        </ccTool>
-      </folder>
       <item path="src/EvaporativeCoolingCLI.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/EvaporativeCoolingCLINewAPI.cpp"
@@ -212,6 +211,10 @@
       </item>
       <item path="src/library/GSLRandomFlat.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/library/GeoData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/library/GeoData.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/library/Insilico.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/Insilico.h" ex="false" tool="3" flavor2="0">
@@ -257,7 +260,6 @@
     </conf>
     <conf name="Simple_test.txt" type="0">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>false</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -270,227 +272,100 @@
           <buildCommand>${MAKE} </buildCommand>
           <cleanCommand>${MAKE} clean</cleanCommand>
           <executablePath>ec</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>/usr/share/R/include</pElem>
+              <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
+              <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
+            </incDir>
+          </cTool>
           <ccTool>
+            <incDir>
+              <pElem>/usr/local/include</pElem>
+              <pElem>/usr/share/R/include</pElem>
+              <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
+              <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
+              <pElem>/usr/local/include</pElem>
+            </incDir>
             <preprocessorList>
               <Elem>HAVE__BOOL</Elem>
               <Elem>__NOPLUGIN__</Elem>
             </preprocessorList>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
-      <item path="examples/example1.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>examples</pElem>
-            <pElem>.</pElem>
-            <pElem>/usr/include</pElem>
-            <pElem>/usr/include/libxml2</pElem>
-            <pElem>examples/-I../src</pElem>
-            <pElem>src/library</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>_OPENMP=200505</Elem>
-          </preprocessorList>
-        </ccTool>
+      <item path="config.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="examples/example1_main.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/local/include</pElem>
-            <pElem>/usr/share/R/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
-          </incDir>
-        </ccTool>
+      <item path="examples/example1.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="examples/example2.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>examples</pElem>
-            <pElem>.</pElem>
-            <pElem>/usr/include</pElem>
-            <pElem>/usr/include/libxml2</pElem>
-            <pElem>examples/-I../src</pElem>
-            <pElem>src/library</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>_OPENMP=200505</Elem>
-          </preprocessorList>
-        </ccTool>
+      <item path="examples/example1_main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="examples/example2_main.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/local/include</pElem>
-            <pElem>/usr/share/R/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
-          </incDir>
-        </ccTool>
+      <item path="examples/example2.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="examples/example3.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>examples</pElem>
-            <pElem>.</pElem>
-            <pElem>/usr/include</pElem>
-            <pElem>/usr/include/libxml2</pElem>
-            <pElem>examples/-I../src</pElem>
-            <pElem>src/library</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>_OPENMP=200505</Elem>
-          </preprocessorList>
-        </ccTool>
+      <item path="examples/example2_main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="examples/example3_main.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/local/include</pElem>
-            <pElem>/usr/share/R/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
-          </incDir>
-        </ccTool>
+      <item path="examples/example3.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="examples/example4.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>examples</pElem>
-            <pElem>.</pElem>
-            <pElem>/usr/include</pElem>
-            <pElem>/usr/include/libxml2</pElem>
-            <pElem>examples/-I../src</pElem>
-            <pElem>src/library</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>_OPENMP=200505</Elem>
-          </preprocessorList>
-        </ccTool>
+      <item path="examples/example3_main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="examples/example4_main.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/local/include</pElem>
-            <pElem>/usr/share/R/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
-          </incDir>
-        </ccTool>
+      <item path="examples/example4.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <folder path="cppec/src">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/local/include</pElem>
-          </incDir>
-        </ccTool>
-      </folder>
-      <folder path="cppec/src/library">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/share/R/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
-          </incDir>
-        </ccTool>
-      </folder>
-      <item path="src/EvaporativeCoolingCLI.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/share/R/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/Rcpp/include</pElem>
-            <pElem>/usr/local/lib/R/site-library/RInside/include</pElem>
-          </incDir>
-        </ccTool>
+      <item path="examples/example4_main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/EvaporativeCoolingCLI.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/EvaporativeCoolingCLINewAPI.cpp"
             ex="false"
             tool="1"
-            flavor2="4">
-        <ccTool>
-          <incDir>
-            <pElem>src</pElem>
-            <pElem>.</pElem>
-            <pElem>/usr/include</pElem>
-            <pElem>/usr/include/libxml2</pElem>
-            <pElem>src/-I../src</pElem>
-            <pElem>src/library</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>HAVE_CONFIG_H</Elem>
-            <Elem>_OPENMP=200505</Elem>
-          </preprocessorList>
-        </ccTool>
+            flavor2="0">
       </item>
-      <item path="src/library/ArffDataset.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/ArffDataset.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/ArffDataset.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/AttributeRanker.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/AttributeRanker.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/AttributeRanker.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/library/BestN.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/BirdseedData.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/BirdseedData.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/BirdseedData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/ChiSquared.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/ChiSquared.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/ChiSquared.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/Dataset.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/Dataset.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/Dataset.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/DatasetInstance.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/DatasetInstance.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/DatasetInstance.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/Deseq.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/Deseq.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/Deseq.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/DgeData.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/DgeData.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/DgeData.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/DistanceMetrics.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/DistanceMetrics.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/DistanceMetrics.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/Edger.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/Edger.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/Edger.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/EvaporativeCooling.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/EvaporativeCooling.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/EvaporativeCooling.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -498,63 +373,47 @@
       </item>
       <item path="src/library/GSLRandomFlat.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/Insilico.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/GeoData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/library/GeoData.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/library/Insilico.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/Insilico.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/PlinkBinaryDataset.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/PlinkBinaryDataset.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/PlinkBinaryDataset.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/PlinkDataset.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/PlinkDataset.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/PlinkDataset.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/PlinkRawDataset.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/PlinkRawDataset.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/PlinkRawDataset.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/RReliefF.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/RReliefF.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/RReliefF.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/RandomJungle.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/RandomJungle.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/RandomJungle.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/ReliefF.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/ReliefF.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/ReliefF.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/ReliefFSeq.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/ReliefFSeq.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/ReliefFSeq.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/SNReliefF.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/SNReliefF.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/SNReliefF.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="src/library/Statistics.cpp" ex="false" tool="1" flavor2="4">
-        <ccTool>
-        </ccTool>
+      <item path="src/library/Statistics.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/library/Statistics.h" ex="false" tool="3" flavor2="0">
       </item>

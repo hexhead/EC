@@ -26,7 +26,9 @@ ecm_SOURCES = EvaporativeCoolingCLINewAPI.cpp
 ecm_LDADD = $(my_ld_flags) $(my_ld_paths)
 
 # additional include paths to support the library headers
-INCLUDES = $(myincludes)
+# INCLUDES = $(myincludes)
+AM_CPPFLAGS = $(myincludes)
 
 # the subdirectories of src to go into
-SUBDIRS = library
+SUBDIRS = library ranger
+

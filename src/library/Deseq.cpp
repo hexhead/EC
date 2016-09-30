@@ -14,6 +14,7 @@
 
 #include "boost/lexical_cast.hpp"
 
+#include "AttributeRanker.h"
 #include "Deseq.h"
 #include "Dataset.h"
 #include "Insilico.h"

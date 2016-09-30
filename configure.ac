@@ -3,22 +3,22 @@
 ### Process this file with autoconf to produce a configure script.
 ###
 ### Evaporative Cooling (EC)
-### Bill White (c) 2005-2012
+### Bill White (c) 2005-2012, 2016
 ### http://insilico.utulsa.edu/evaporative-cooling
 
 AC_PREREQ(2.61)
 
-AC_INIT([ec], [1.0], [bill-white@utulsa.edu], [http://insilico.utulsa.edu/evaporative-cooling])
+AC_INIT([ec], [2.0], [bill-white@utulsa.edu], [http://insilico.utulsa.edu/evaporative-cooling])
+
+AC_INIT([ec], [2.0])
+AC_CONFIG_SRCDIR([src/library/EvaporativeCooling.cpp])
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([build-aux])
-AC_CONFIG_SRCDIR([src/library/EvaporativeCooling.cpp])
 AC_CONFIG_HEADERS([config.h])
-
-AM_INIT_AUTOMAKE([ec], [1.0])
-
 AC_SUBST(SRCDIR, src)
-AC_SUBST(LIBDIR, library)
+AC_SUBST(LIBDIR, ranger)
+AM_INIT_AUTOMAKE
 
 AC_CANONICAL_BUILD
 AC_CANONICAL_HOST
@@ -149,16 +149,18 @@ fi
 AM_CONDITIONAL(XML_DELEGATE,test "$have_xml" = 'yes')
 AC_SUBST(XML_LIBS)
 
-# check for RandomJungle
-AC_CHECK_LIB([rjungle], [main],
+# check for EC 
+AC_CHECK_LIB([ec], [main],
 	[],
-	AC_MSG_NOTICE(test for Random Jungle failed)
+	AC_MSG_NOTICE(test for EC library failed)
 )
-AC_CHECK_LIB([lr], [main],
+
+# check for Random Forest (ranger)
+AC_CHECK_LIB([ranger], [main],
 	[],
-	AC_MSG_NOTICE(test for Random Jungle linear regession library liblr failed)
+	AC_MSG_NOTICE(test for Random Forest (ranger) library failed)
 )
-LDFLAGS="$LDFLAGS -llr -lrjungle"
+LDFLAGS="$LDFLAGS -lec -lranger"
 
 ######################################################################
 # DOXYGEN SUPPORT
@@ -180,5 +182,5 @@ DX_INIT_DOXYGEN([$PACKAGE_NAME],[doxygen.cfg])
 AC_MSG_NOTICE([--------------------------------------------------])
 
 # Process makefiles
-AC_CONFIG_FILES([Makefile src/library/Makefile src/Makefile examples/Makefile])
+AC_CONFIG_FILES([Makefile src/ranger/Makefile src/library/Makefile src/Makefile])
 AC_OUTPUT

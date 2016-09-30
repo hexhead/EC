@@ -12,17 +12,17 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
+/* Define to 1 if you have the `ec' library (-lec). */
+#undef HAVE_LIBEC
+
 /* Define to 1 if you have the `gomp' library (-lgomp). */
 #undef HAVE_LIBGOMP
-
-/* Define to 1 if you have the `lr' library (-llr). */
-#undef HAVE_LIBLR
 
 /* Define to 1 if you have the `pthread' library (-lpthread). */
 #undef HAVE_LIBPTHREAD
 
-/* Define to 1 if you have the `rjungle' library (-lrjungle). */
-#undef HAVE_LIBRJUNGLE
+/* Define to 1 if you have the `ranger' library (-lranger). */
+#undef HAVE_LIBRANGER
 
 /* Define to 1 if you have the `z' library (-lz). */
 #undef HAVE_LIBZ
